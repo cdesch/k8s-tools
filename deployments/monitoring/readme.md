@@ -20,4 +20,5 @@ https://github.com/bibinwilson/kubernetes-alert-manager
     kubectl apply -n monitoring -f deployments/monitoring/alert-manager
 
 kubectl create ns sentry
+helm dependency update
 helm install sentry sentry -n sentry -f sentry/values.yaml
