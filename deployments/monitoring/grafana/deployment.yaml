@@ -28,14 +28,19 @@ spec:
             memory: 300M
             cpu: "250m"
         volumeMounts:
-          - mountPath: /var/lib/grafana
-            name: grafana-storage
+          # - mountPath: /var/lib/grafana
+          #   name: grafana-storage
+          - name: data-dir
+            mountPath: /var/lib/grafana/
           - mountPath: /etc/grafana/provisioning/datasources
             name: grafana-datasources
             readOnly: false
       volumes:
-        - name: grafana-storage
-          emptyDir: {}
+        # - name: grafana-storage
+        #   emptyDir: {}
+        - name: data-dir
+          persistentVolumeClaim:
+           claimName: graf-data-dir-pvc
         - name: grafana-datasources
           configMap:
               defaultMode: 420
