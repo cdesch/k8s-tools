@@ -22,22 +22,18 @@ spec:
           containerPort: 3000
         resources:
           limits:
-            memory: "1Gi"
-            cpu: "1000m"
+            memory: "512Mi"
+            cpu: "500m"
           requests: 
-            memory: 300M
-            cpu: "250m"
+            memory: "256Mi"
+            cpu: "300m"
         volumeMounts:
-          # - mountPath: /var/lib/grafana
-          #   name: grafana-storage
           - name: data-dir
             mountPath: /var/lib/grafana/
           - mountPath: /etc/grafana/provisioning/datasources
             name: grafana-datasources
             readOnly: false
       volumes:
-        # - name: grafana-storage
-        #   emptyDir: {}
         - name: data-dir
           persistentVolumeClaim:
            claimName: graf-data-dir-pvc

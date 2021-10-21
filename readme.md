@@ -136,3 +136,15 @@ https://medium.com/starschema-blog/monitor-your-infrastructure-with-influxdb-and
 [KubeBench](https://github.com/aquasecurity/kube-bench)
 [Kubeadm](https://github.com/kubernetes/kubeadm)
 [Falco](https://falco.org/)
+
+
+ssh cj@69.119.127.118 -p 33333
+
+
+Ubunutu Disable GUI
+
+    https://linuxconfig.org/how-to-disable-enable-gui-on-boot-in-ubuntu-20-04-focal-fossa-linux-desktop
+
+
+
+    kubectl create secret -n monitoring generic influxdb-admin --from-literal=ADMIN_PASSWORD=topadmin123!
