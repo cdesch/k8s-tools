@@ -9,7 +9,7 @@ spec:
       restartPolicy: Never
       containers:
         - name: influxdb-setup
-          image: influxdb:v2.0-alpine
+          image: influxdb:2.0-alpine
           command:
             - influx
           args:
@@ -21,7 +21,7 @@ spec:
             - --org
             - "${DOCKER_INFLUXDB_INIT_ORG}"
             - --password
-            - yogsothoth
+            - "${ADMIN_PASSWORD}"
             - --username
             - "$(DOCKER_INFLUXDB_INIT_USERNAME)"
             - --retention

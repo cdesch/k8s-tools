@@ -30,7 +30,7 @@ spec:
     spec:
       containers:
       - name: influxdb
-        image: quay.io/influxdb/influxdb:v2.0.3
+        image: influxdb:2.0-alpine
         resources:
           requests:
             memory: "256Mi"

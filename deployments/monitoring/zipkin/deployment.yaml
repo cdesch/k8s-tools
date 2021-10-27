@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zipkin
+  namespace: monitoring
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: zipkin
+  template:
+    metadata:
+      name: zipkin
+      labels:
+        app: zipkin
+    spec:
+      nodeSelector:
+        kubernetes.io/os: linux
+      containers:
+      - name: zipkin
+        image: openzipkin/zipkin:latest
+        ports:
+        - name: web
+          containerPort: 9411
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "300m"
+          requests: 
+            memory: "256Mi"
+            cpu: "200m"
+
