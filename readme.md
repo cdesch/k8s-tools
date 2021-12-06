@@ -80,3 +80,16 @@ Ubunutu Disable GUI
 
 pod gracefulshutdown
 https://pracucci.com/graceful-shutdown-of-kubernetes-pods.html
+
+
+Per Node (3)
+
+CRDB
+ CPU 2
+ Memory 8GI
+
+RabbitMQ
+
+    limits:
+      cpu: 4
+      memory: 10Gi
